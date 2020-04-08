@@ -4,9 +4,7 @@ def my_find(collection)
   if block_given?
     i = 0
     while i < collection.length
-      if yield(collection[i])
-        return yield(collection[i])
-      end
+      return yield(collection[i]) if yield(collection[i])
       i += 1
     end
   else
